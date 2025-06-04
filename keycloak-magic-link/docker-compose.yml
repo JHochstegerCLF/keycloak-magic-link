@@ -1,0 +1,19 @@
+---
+services:
+  magic-link-keycloak:
+    build:
+      dockerfile: example/Dockerfile
+      context: .
+      args:
+        KEYCLOAK_VERSION: 26.2.0
+    command: "start-dev --import-realm"
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+    ports:
+      - '8080:8080'
+  magic-link-mailhog:
+    image: mailhog/mailhog
+    ports:
+      - '8025:8025'
+      - '1025:1025'
