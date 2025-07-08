@@ -18,7 +18,7 @@
         <testcontainer.keycloak.version>3.6.0</testcontainer.keycloak.version>
         <junit.version>5.12.1</junit.version>
         <testcontainer.junit.version>1.20.6</testcontainer.junit.version>
-        <jinjava.version>2.7.4</jinjava.version>
+        <jinjava.version>2.8.0</jinjava.version>
         <playwright.version>1.51.0</playwright.version>
     </properties>
 
