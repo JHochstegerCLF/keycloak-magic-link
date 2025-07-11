@@ -31,6 +31,10 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven- # Fallback key for restoring cache
 
+    - name: Install Playwright dependencies
+      run: npx playwright install --with-deps # Install Playwright browsers and their system dependencies
+      working-directory: keycloak-magic-link # Ensure this runs in the correct directory if Playwright needs local context
+
     - name: Run Maven tests
       run: mvn -B test # Run Maven tests in batch mode (-B) for non-interactive execution
       working-directory: keycloak-magic-link # Specify the working directory for this step
